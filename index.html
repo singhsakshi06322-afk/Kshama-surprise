@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Kshama ❤️</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(135deg,#ff416c,#ff8fa3,#ff5e9c);
+  overflow: hidden;
+}
+.card {
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 400px;
+  background: #ffffff25;
+  border: 1px solid #ffffff55;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px #a0004040;
+}
+h1 { font-size: 34px; }
+h2 { font-size: 30px; }
+button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff3470;
+  font-size: 17px;
+  font-weight: bold;
+}
+#surprise { display: none; }
+.heart {
+  position: fixed;
+  bottom: -40px;
+  animation: float 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div style="font-size:65px">💗</div>
+  <h1>Hey Kshama! 🥰</h1>
+  <p>I have something special for you...</p>
+  <button onclick="showLove()">Click here for a surprise 🎁</button>
+
+  <div id="surprise">
+    <h2>I LOVE YOU ❤️</h2>
+    <div style="font-size:65px">🌹💖🌹</div>
+    <p>You make my world more beautiful.</p>
+    <h3>You are my favourite person! 🥹</h3>
+    <p>Forever & Always 💍</p>
+  </div>
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("surprise").style.display = "block";
+  document.querySelector("button").style.display = "none";
+  for(let i=0;i<30;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML=["❤️","💗","💕","💖"][i%4];
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDelay=Math.random()*4+"s";
+    h.style.fontSize=(20+Math.random()*25)+"px";
+    document.body.appendChild(h);
+  }
+}
+</script>
+</body>
+</html>
